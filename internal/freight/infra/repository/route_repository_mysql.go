@@ -58,8 +58,8 @@ func (r *RouteRepositoryMysql) FindById(id string) (*entity.Route, error) {
 }
 
 func (r *RouteRepositoryMysql) Update(route *entity.Route) error {
-	startedAt := route.StartedAt.Format("2023-01-02 15:00:00")
-	finishedAt := route.FinishedAt.Format("2023-01-02 16:00:00")
+	startedAt := route.StartedAt.Format("2006-01-02T15:04")
+	finishedAt := route.FinishedAt.Format("2006-01-02T15:04")
 	stmt := "UPDATE routes SET status = ?, fright_price = ?, started_at = ?, finished_at = ? WHERE id = ?"
 	_, err := r.db.Exec(stmt, route.Status, route.FreightPrice, startedAt, finishedAt, route.ID)
 	if err != nil {
