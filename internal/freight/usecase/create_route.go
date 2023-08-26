@@ -3,19 +3,19 @@ package usecase
 import "github.com/wsldev/gofreight/internal/freight/entity"
 
 type CreateRouteInput struct {
-	ID       string
-	Name     string
-	Distance float64
-	Event    string
+	ID       string  `json:"id"`
+	Name     string  `json:"name"`
+	Distance float64 `json:"distance"`
+	Event    string  `json:"event"`
 }
 
 type CreateRouteOutput struct {
-	ID           string
-	Name         string
-	Distance     float64
-	Event        string
-	Status       string
-	FreightPrice float64
+	ID           string  `json:"id"`
+	Name         string  `json:"name"`
+	Distance     float64 `json:"distance"`
+	Event        string  `json:"event"`
+	Status       string  `json:"status"`
+	FreightPrice float64 `json:"freight_price"`
 }
 
 type CreateRouteUseCase struct {
